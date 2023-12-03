@@ -1,4 +1,4 @@
-# img64
+# img64 (Developing now...)
 
 This library is a tool for converting images to base64 encoding and vice versa.
 
