@@ -1,7 +1,6 @@
 # img64
 
-It is a tool for converting image to base64 and vice versa.
+This library is a tool for converting images to base64 encoding and vice versa.
 
+- It was implemented by referencing [ternaus/base64ToImageConverters](https://github.com/ternaus/base64ToImageConverters).
 
-
-- Be refered from [ternaus/base64ToImageConverters](https://github.com/ternaus/base64ToImageConverters)
