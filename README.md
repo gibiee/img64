@@ -1,4 +1,6 @@
-![banner](https://github.com/gibiee/img64/assets/37574274/1e4ba6f4-776d-4e84-b589-09f75d64d175)
+<p align="center">
+  <img src="https://github.com/gibiee/img64/assets/37574274/1e4ba6f4-776d-4e84-b589-09f75d64d175" width="50%" height="50%" />
+</p>
 
 This library is a tool for converting images to base64 encoding and vice versa.
 
