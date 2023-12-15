@@ -14,6 +14,12 @@ This library is a tool for converting images to base64 encoding and vice versa.
   - This code enhances user convenience in handling both RGB and grayscale images.
 
 
+# Installation
+```sh
+pip install img64
+```
+
+
 # Quick start
 
 ## Convert pil image to base64
