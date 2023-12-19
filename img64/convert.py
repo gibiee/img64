@@ -17,14 +17,12 @@ def image_to_base64(image: Union[Image.Image, np.ndarray]) -> str :
 
     return image_b64_utf8
 
-def base64_to_image(base64: str, type: Literal["pil", "numpy"]='pil') -> Union[Image.Image, np.ndarray] :
-    assert type in ["pil", "numpy"], "Expected type 'pil' or 'numpy'"
+def base64_to_image(base64: str, type: Literal['pil', 'numpy']='pil') -> Union[Image.Image, np.ndarray] :
+    assert type in ['pil', 'numpy'], "Expected type 'pil' or 'numpy'"
     img_bytes = _base64.b64decode(base64)
     buffer = io.BytesIO(img_bytes)
     img = Image.open(buffer)
-    img = np.array(img)
+    img = np.array(img) # RGB 이미지가 PIL.PngImagePlugin.PngImageFile 객체인 현상 방지
 
-    if type == 'pil' :
-        img = Image.fromarray(img)
-    
-    return img
+    if type == 'numpy' : return img
+    else : return Image.fromarray(img)
