@@ -9,10 +9,6 @@
 
 This library is a tool for converting images to base64 encoding and vice versa.
 
-- It was implemented by referencing [ternaus/base64ToImageConverters](https://github.com/ternaus/base64ToImageConverters).
-  - The referenced code didn't ensure data consistency, so this code improves that issue.
-  - This code enhances user convenience in handling both RGB and grayscale images.
-
 
 # Installation
 ```sh
@@ -32,7 +28,7 @@ base64 = img64.image_to_base64(image)
 base64[:30] # 'iVBORw0KGgoAAAANSUhEUgAABAAAAA...'
 ```
 
-## Convert numpy(opencv) image to base64
+## Convert numpy(openCV) image to base64
 ```py
 import cv2
 import img64
@@ -52,7 +48,7 @@ image = img64.base64_to_image(base64, type='pil')
 type(image) # PIL.Image.Image
 ```
 
-## Convert base64 to numpy image
+## Convert base64 to numpy(openCV) image
 ```py
 import img64
 
@@ -60,3 +56,9 @@ base64 = 'iVBORw0KGgoAAAANSUhEUgAABAAAAA...'
 image = img64.base64_to_image(base64, type='numpy')
 type(image) # numpy.ndarray
 ```
+
+
+# Information
+- It was implemented by referencing [ternaus/base64ToImageConverters](https://github.com/ternaus/base64ToImageConverters).
+  - The referenced code didn't ensure data consistency, so this code improves that issue.
+  - This code enhances user convenience in handling both RGB and grayscale images.
