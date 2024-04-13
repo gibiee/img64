@@ -18,45 +18,38 @@ pip install img64
 
 # Quick start
 
-## Convert pil image to base64
+## Convert Image to Base64
 ```py
 from PIL import Image
-import img64
-
-image = Image.open('sample.png')
-base64 = img64.image_to_base64(image)
-base64[:30] # 'iVBORw0KGgoAAAANSUhEUgAABAAAAA...'
-```
-
-## Convert numpy(openCV) image to base64
-```py
 import cv2
 import img64
 
+# PIL image to Base64
+image = Image.open('sample.png')
+base64 = img64.image_to_base64(image)
+base64[:30] # 'iVBORw0KGgoAAAANSUhEUgAABAAAAA...'
+
+# Numpy(OpenCV) image to Base64
 image = cv2.imread('sample.png')
 image = cv2.cvtColor(image, cv2.COLOR_BGRA2RGBA)
 base64 = img64.image_to_base64(image)
 base64[:30] # 'iVBORw0KGgoAAAANSUhEUgAABAAAAA...'
 ```
 
-## Convert base64 to pil image
+## Convert Base64 to Image
 ```py
 import img64
 
+# Base64 to PIL image
 base64 = 'iVBORw0KGgoAAAANSUhEUgAABAAAAA...'
 image = img64.base64_to_image(base64, type='pil')
 type(image) # PIL.Image.Image
-```
 
-## Convert base64 to numpy(openCV) image
-```py
-import img64
-
+# Base64 to Numpy(OpenCV) image
 base64 = 'iVBORw0KGgoAAAANSUhEUgAABAAAAA...'
 image = img64.base64_to_image(base64, type='numpy')
 type(image) # numpy.ndarray
 ```
-
 
 # Information
 - It was implemented by referencing [ternaus/base64ToImageConverters](https://github.com/ternaus/base64ToImageConverters).

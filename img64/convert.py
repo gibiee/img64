@@ -4,8 +4,6 @@ import numpy as np
 from PIL import Image
 from typing import Union, Literal
 
-# img = Image.open('151.png')
-
 def image_to_bytes(img: Union[Image.Image, np.ndarray]) -> bytes :
     if isinstance(img, np.ndarray) :
         img = Image.fromarray(img)
