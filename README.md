@@ -53,5 +53,5 @@ type(image) # numpy.ndarray
 
 # Information
 - It was implemented by referencing [ternaus/base64ToImageConverters](https://github.com/ternaus/base64ToImageConverters).
-  - The referenced library doesn't ensure data consistency, so this library addresses that issue.
+  - The referenced library doesn't ensure data consistency, but this library addresses that issue.
   - This library enhances user convenience in handling both RGB and grayscale images.

@@ -5,12 +5,12 @@ from PIL import Image
 from typing import Union, Literal
 
  # image → bytes → base64
-def image_to_bytes(img: Union[Image.Image, np.ndarray]) -> bytes :
+def image_to_bytes(img: Union[Image.Image, np.ndarray], format: str='PNG') -> bytes :
     if isinstance(img, np.ndarray) :
         img = Image.fromarray(img)
     
     with io.BytesIO() as buffer :
-        img.save(buffer, format="PNG")
+        img.save(buffer, format=format)
         img_bytes = buffer.getvalue()
     return img_bytes
 
@@ -19,8 +19,8 @@ def bytes_to_base64(img_bytes: bytes) -> str :
     img_b64_utf8 = img_b64.decode("utf-8")
     return img_b64_utf8
 
-def image_to_base64(img: Union[Image.Image, np.ndarray]) -> str :
-    img_bytes = image_to_bytes(img)
+def image_to_base64(img: Union[Image.Image, np.ndarray], format: str='PNG') -> str :
+    img_bytes = image_to_bytes(img, format)
     img_b64_utf8 = bytes_to_base64(img_bytes)
     return img_b64_utf8
 
